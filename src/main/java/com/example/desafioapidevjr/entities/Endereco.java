@@ -2,6 +2,7 @@ package com.example.desafioapidevjr.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Endereco {
@@ -21,15 +22,12 @@ public class Endereco {
 
     private String estado;
 
+    @NotBlank
+    @Column(nullable = false)
     private String cep;
 
-
-
     //getter setter
-
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
     public String getLogradouro() {
         return logradouro;
@@ -126,8 +124,6 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public Endereco() {
-
-    }
+    public Endereco() {    }
 
 }

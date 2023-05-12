@@ -1,6 +1,8 @@
 package com.example.desafioapidevjr.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,15 +15,18 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String nome;
 
+    @NotBlank
     @Column(unique = true)
     private String email;
 
+    @NotBlank
     @Column(unique = true)
     private String cpf;
 
-
+    @NotNull
     private LocalDate dataNascimento;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

@@ -20,11 +20,6 @@ public class EnderecoController {
         this.enderecoService = enderecoService;
     }
 
-    @GetMapping("/{cep}")
-    public ViaCepResponse buscarPorId(@PathVariable String cep) {
-        return viaCepService.getCepById(cep);
-    }
-
     @PostMapping()
     public Endereco newAddress(@RequestBody EnderecoDTO request) throws Exception {
         var cepAPI = viaCepService.getCepById(request.getCep());

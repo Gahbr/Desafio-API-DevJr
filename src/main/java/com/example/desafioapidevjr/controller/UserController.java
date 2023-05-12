@@ -34,11 +34,11 @@ public class UserController {
     public ResponseEntity<Optional<Usuario>> fetchUserById(@PathVariable int id) {
         try {
             var response = userService.findUserById(id);
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return ResponseEntity.badRequest().body(null);
+            return ResponseEntity.badRequest().build();
         }
     }
 }
