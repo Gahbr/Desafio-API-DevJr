@@ -3,6 +3,7 @@ package com.example.desafioapidevjr.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Endereco {
@@ -10,16 +11,22 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String logradouro;
 
+    @Positive
     private int numero;
 
+    @NotBlank
     private String complemento;
 
+    @NotBlank
     private String bairro;
 
+    @NotBlank
     private String cidade;
 
+    @NotBlank
     private String estado;
 
     @NotBlank

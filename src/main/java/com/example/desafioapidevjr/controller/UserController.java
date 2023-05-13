@@ -38,7 +38,7 @@ public class UserController {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().header("Error-Message", e.getMessage()).build();
         }
     }
 }

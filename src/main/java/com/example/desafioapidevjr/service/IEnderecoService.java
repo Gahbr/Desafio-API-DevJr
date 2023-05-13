@@ -5,6 +5,6 @@ import com.example.desafioapidevjr.entities.Endereco;
 import com.example.desafioapidevjr.service.viaCep.ViaCepResponse;
 
 public interface IEnderecoService {
-    Endereco createAddress(EnderecoDTO request, ViaCepResponse apiResponse) throws Exception;
+    Endereco createAddress(EnderecoDTO request) throws Exception;
 
 }

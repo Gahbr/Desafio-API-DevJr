@@ -35,10 +35,10 @@ public class UserService implements IUserService {
         return "Usuário criado com sucesso";
     }
 
-    public Optional<Usuario> findUserById(int id) throws Exception {
-        var optUser = userRepository.findById(id);
-        if(optUser.isEmpty()){
-          throw new Exception("Usuário não existe!");
+    public Optional<Usuario> findUserById(int id){
+        var findUser = userRepository.findById(id);
+        if(findUser.isEmpty()){
+          throw new NoSuchElementException("Usuário com esse ID não existe!");
         }
         return userRepository.findById(id);
     }
